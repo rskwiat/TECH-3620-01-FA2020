@@ -1,7 +1,7 @@
 # Kean University Tech 3620 - 01
 ## Mobile Application Development
 
-All work done in class will be reflected in this repo. The Installation instructions can be in the [commands/installations.md](commands/installations.md) folder, and the expo instructions can be found in the Expo[commands/expo.md] file.
+All work done in class will be reflected in this repo. The Installation instructions can be in the [Installations](commands/installations.md) file, and the expo instructions can be found in the [Expo](commands/expo.md) file.
 
 ## Accounts Needed
 
