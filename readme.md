@@ -7,6 +7,10 @@ All work done in class will be reflected in this repo. The Installation instruct
 
 - [Expo](https://expo.io/signup)
 
+## Code Editors
+
+- [VSCode](https://code.visualstudio.com/)
+
 ## App Store Links
 
 - [App Store](https://apps.apple.com/us/app/expo-client/id982107779)
