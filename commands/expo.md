@@ -2,6 +2,12 @@
 
 All of these commands should be run in a Terminal / Powershell Window.
 
+## Changes Directory (works both Mac and PC)
+
+```
+cd <DirectoryName>
+```
+
 ## Logs in to your expo.io account
 
 ```
@@ -14,18 +20,12 @@ expo login
 expo init <AppName>
 ```
 
-## Changes Directory
-
-```
-cd <DirectoryName>
-```
-
 ## Starts Expo Project
 
 ```
 npm start
 ```
 
-This will start an Expo Bundler that runs on your machine that can be accessed by your iPhone / Android device. You will need the Expo Apps installed on them and signed in.
+This will start an Expo Bundler that runs on your machine that can be accessed by your iPhone / Android device. You will need the [Expo Mobile Clients](https://docs.expo.io/get-started/installation/#2-mobile-app-expo-client-for-ios/) installed on your device and signed in.
 
 

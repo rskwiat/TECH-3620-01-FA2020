@@ -1,6 +1,7 @@
 # Node Installation Instructions
 
-[Expo Commands](expo.md)
+- [Expo Commands](expo.md)
+- [Expo Installation](https://docs.expo.io/get-started/installation/)
 
 ## Mac OS Installation Instructions
 
@@ -50,4 +51,46 @@ Powershell can be found in XXX folder, or by running Search > PowerShell.
 
 ```
 > npm install expo-cli --global
+```
+
+### Installation Errors - Mac OS
+
+Command Node Installation Error, this means you as a user do not have access to this directory.
+
+```
+npm ERR! path /usr/local/lib/node_modules
+npm ERR! code EACCES
+npm ERR! errno -13
+npm ERR! syscall access
+npm ERR! Error: EACCES: permission denied, access '/usr/local/lib/node_modules'
+npm ERR!  { Error: EACCES: permission denied, access '/usr/local/lib/node_modules'
+npm ERR!   errno: -13,
+npm ERR!   code: 'EACCES',
+npm ERR!   syscall: 'access',
+npm ERR!   path: '/usr/local/lib/node_modules' }
+npm ERR! 
+npm ERR! Please try running this command again as root/Administrator.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /Users/<USERNAME>/.npm/_logs/2018-02-21T16_26_08_421Z-debug.log
+```
+
+1. Check your permsissions
+
+```
+ls -la /usr/local/lib/node_modules
+```
+
+If npm and <USERNAME> do not match run update who owns the folder:
+
+```
+sudo chown -R $USER /usr/local/lib/node_modules
+````
+
+Enter the password you use to login to your computer.
+
+2. Continue with the installation as before with
+
+```
+npm install -g expo-cli`
 ```

@@ -6,6 +6,8 @@ All work done in class will be reflected in this repo. The Installation instruct
 ## Accounts Needed
 
 - [Expo](https://expo.io/signup)
+- [Expo Docs](https://docs.expo.io)
+
 
 ## Code Editors
 
