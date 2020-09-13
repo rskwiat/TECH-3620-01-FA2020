@@ -6,6 +6,7 @@
 ## Mac OS Installation Instructions
 
 [Download LTS NodeJS Installer](https://nodejs.org/dist/v12.18.3/node-v12.18.3.pkg)
+[Video Instructions](https://youtu.be/g-c3RB5vTOE)
 
 `$` Symbolizes Terminal command line
 
@@ -30,8 +31,9 @@ $ npm install expo-cli --global
 https://chocolatey.org/docs/installation
 
 `>` Symbolizes Powershell command line
+[Video Instructions](https://youtu.be/Qo_6aOBxigg)
 
-Powershell can be found in XXX folder, or by running Search > PowerShell.
+Powershell can be found by opening Search > PowerShell. I reccommend adding this application to your Taskbar.
 
 ## Open Powershell as Admin (right click and run as Admin)
 
