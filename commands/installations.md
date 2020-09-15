@@ -5,8 +5,8 @@
 
 ## Mac OS Installation Instructions
 
-[Download LTS NodeJS Installer](https://nodejs.org/dist/v12.18.3/node-v12.18.3.pkg)
-[Video Instructions](https://youtu.be/g-c3RB5vTOE)
+- [Download LTS NodeJS Installer](https://nodejs.org/dist/v12.18.3/node-v12.18.3.pkg)
+- [Video Instructions](https://youtu.be/g-c3RB5vTOE)
 
 `$` Symbolizes Terminal command line
 
@@ -28,10 +28,11 @@ $ npm install expo-cli --global
 
 ## Windows Installation Documentation
 
-https://chocolatey.org/docs/installation
+- [Chocolately](https://chocolatey.org/docs/installation)
+
+- [Video Instructions](https://youtu.be/Qo_6aOBxigg)
 
 `>` Symbolizes Powershell command line
-[Video Instructions](https://youtu.be/Qo_6aOBxigg)
 
 Powershell can be found by opening Search > PowerShell. I reccommend adding this application to your Taskbar.
 
