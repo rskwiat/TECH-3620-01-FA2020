@@ -13,11 +13,18 @@ import {
 import { Audio } from 'expo-av';
 
 /* Importing reusable components */
-import Card from './src/components/Card';
+import { Card, Row } from './src/components';
+
+import { 
+  setBackgroundColor,
+  setTextColor 
+} from './src/utils/setTheme';
 
 /* Importing assets */
 import Goose from './assets/goose.jpg';
 import StormTrooper from './assets/stormtrooper.jpg';
+import Crowd from './assets/crowd.jpg';
+import Fireworks from './assets/fireworks.jpg';
 
 class App extends Component {
   async componentDidMount() {
@@ -36,17 +43,38 @@ class App extends Component {
     });
 
     this.honk = new Audio.Sound();
+    this.lazer = new Audio.Sound();
+    this.fireworks = new Audio.Sound();
+    this.crowd = new Audio.Sound();
 
     const status = {
       shouldPlay: false,
     }
 
     this.honk.loadAsync(require('./assets/honk.mp3'), status, false);
+    this.lazer.loadAsync(require('./assets/lazer.mp3'), status, false);
+    this.fireworks.loadAsync(require('./assets/fireworks.mp3'), status, false);
+    this.crowd.loadAsync(require('./assets/crowd.mp3'), status, false);
   }
 
   Honk = () => {
     this.honk.playAsync();
     this.honk.setPositionAsync(0); //resets sound after playing
+  }
+
+  Lazer = () => {
+    this.lazer.playAsync();
+    this.lazer.setPositionAsync(0);
+  }
+
+  Fireworks = () => {
+    this.fireworks.playAsync();
+    this.fireworks.setPositionAsync(0);
+  }
+
+  Crowd = () => {
+    this.crowd.playAsync();
+    this.crowd.setPositionAsync(0);
   }
 
   render() {
@@ -58,8 +86,15 @@ class App extends Component {
     return (
       <SafeAreaView style={styles.container}>
         <Text style={styles.header}>Sound Board</Text>
-        <Card onPress={this.Honk} image={Goose} />
-        <Card onPress={this.Honk} image={StormTrooper} />
+        <Row>
+          <Card onPress={this.Honk} image={Goose} />
+          <Card onPress={this.Lazer} image={StormTrooper} />
+        </Row>
+
+        <Row>
+          <Card onPress={this.Fireworks} image={Fireworks} />
+          <Card onPress={this.Crowd} image={Crowd} />
+        </Row>
       </SafeAreaView>
     );
   }
@@ -75,13 +110,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
-    backgroundColor: Appearance.getColorScheme() === 'dark' ? '#000' : '#fff' //Detects if a user is in Dark Mode, returns black or white background color
+    backgroundColor: setBackgroundColor(),//Detects if a user is in Dark Mode, returns black or white background color
   },
   header: {
     fontSize: 18,
     fontWeight: 'bold',
     textAlign: 'center',
     marginVertical: 20,
-    color: Appearance.getColorScheme() === 'dark' ? '#fff' : '#000' //Detects if a user is in Dark Mode, returns black or white text color
+    color: setTextColor() //Detects if a user is in Dark Mode, returns black or white text color
   },
 });
