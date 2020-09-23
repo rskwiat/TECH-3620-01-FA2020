@@ -43,6 +43,13 @@ Our basic call will match the docs with
 - For temperature in [Celsius](https://en.wikipedia.org/wiki/Celsius) use `units=metric`
 - Temperature in [Kelvin](https://en.wikipedia.org/wiki/Kelvin) is used by `default`, no need to use units parameter in API call
 
+### [Icons and Splash Screens](https://docs.expo.io/tutorial/configuration/)
+
+[Splash Screen](https://docs.expo.io/guides/splash-screens/
+) located in the `assets/splash.png`, replace loading png `1242px` width by `2436px` tall.
+
+App Icon located in the `assets/icon.png`, replace the icon and favicon `1024px` width x `1024px` tall
+
 
 ### Resources
 
