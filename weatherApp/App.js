@@ -3,17 +3,23 @@
  * https://reactjs.org/docs/hooks-intro.html
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { 
   StyleSheet, 
   Text, 
   SafeAreaView,
-  View,
   TextInput,
   TouchableOpacity,
   Keyboard,
 } from 'react-native';
+
+
+import { 
+  Instructions,
+  Temperature,
+  Weather,
+} from './src/components';
 
 import { theme } from './src/theme';
 import key from './src/key'; //api key file, should be ignored / not store in git
@@ -30,6 +36,17 @@ const App = () => {
     setLocation(''); //changes the state to an empty string
     Keyboard.dismiss(); //dismisses keyboard
   }
+
+  //Use effect to get a response to check if the api is working
+  useEffect(() => {
+    getResult();
+  }, []);
+
+  //Checking if the result is valid or not
+  if (!result) return null;
+
+  //Destructuring variables from the result object
+  const { cod, main, name, sys, weather, wind } = result;
 
   return (
     <SafeAreaView style={styles.container}>
@@ -49,14 +66,10 @@ const App = () => {
         <Text style={styles.buttonText}>Get Location</Text>
       </TouchableOpacity>
 
-      <Text>
-        {
-        /** Renders the temp results only if it's true */
-        result && result.main.temp
-        }
-      </Text>
+      <Instructions status={cod} />
+      <Temperature main={main} cityName={name} sys={sys} /> 
+      <Weather weather={weather} wind={wind} />
 
-      <Text>Please Enter a Location</Text>
     </SafeAreaView>
   );
 }

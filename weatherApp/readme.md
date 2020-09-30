@@ -64,6 +64,66 @@ App Icon located in the `assets/icon.png`, replace the icon and favicon `1024px`
 - [Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) or the reason why we put backticks ```(`)``` around our Fetch request and I couldn't remember the name.
 
 
+---
 
+# September 29th, 2020 Notes
+
+### Resources
+- [React Fragments](https://reactjs.org/docs/fragments.html)
+- [useEffect Hook](https://reactjs.org/docs/hooks-reference.html#useeffect)
+- [Destructuring Assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+- [Switch Statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
+- [For Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)
+
+
+
+---
+### Mock Results
+
+```
+{
+  "coord": {
+    "lon": -84.39,
+    "lat": 33.75
+  },
+  "weather": [
+    {
+      "id": 800,
+      "main": "Clear",
+      "description": "clear sky",
+      "icon": "01n"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 64.83,
+    "feels_like": 62.69,
+    "temp_min": 61,
+    "temp_max": 68,
+    "pressure": 1021,
+    "humidity": 56
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 3.36,
+    "deg": 200
+  },
+  "clouds": {
+    "all": 1
+  },
+  "dt": 1600818745,
+  "sys": {
+    "type": 1,
+    "id": 4155,
+    "country": "US",
+    "sunrise": 1600773959,
+    "sunset": 1600817654
+  },
+  "timezone": -14400,
+  "id": 4180439,
+  "name": "Atlanta",
+  "cod": 200
+}
+```
 
 
