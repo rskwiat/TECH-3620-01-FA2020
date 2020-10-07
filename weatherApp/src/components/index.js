@@ -6,9 +6,13 @@
 import Instructions from './Instructions';
 import Temperature from './Temperature';
 import Weather from './Weather';
+import InputBar from './InputBar';
+import Error from './Error';
 
 export {
   Instructions,
   Temperature,
   Weather,
+  InputBar,
+  Error,
 };

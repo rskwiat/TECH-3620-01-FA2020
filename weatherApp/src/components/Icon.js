@@ -14,4 +14,25 @@ const Icon = ({ name, styles }) => {
   }
 };
 
+//refactored (completly optional)
+//url -- https://medium.com/javascript-in-plain-english/a-little-unknown-way-to-get-rid-of-switch-statements-15c2584f51b9
+
+/**
+
+** Create a new Map object of icons to compare the passed in name 
+
+const Icons = {
+  Rain: 'cloud-drizzle',
+  Clouds: 'cloud'
+}
+** Return the names as expected -- if no matches return default (sun)
+const Icon = ({ name, styles }) => (
+  <Feather style={styles} name={Icons[name] || 'sun'} size={60} color={theme.black} />
+);
+* 
+*/
+
+
+
+
 export default Icon;

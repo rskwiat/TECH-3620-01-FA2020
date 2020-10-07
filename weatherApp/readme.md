@@ -76,7 +76,20 @@ App Icon located in the `assets/icon.png`, replace the icon and favicon `1024px`
 - [For Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for)
 - [JavaScript Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
 
+# October 6th, 2020 Notes
 
+### Resources
+- [Expo Location](https://docs.expo.io/versions/latest/sdk/location/)
+- [Try ...Catch Block](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)
+- [Const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
+- [Let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
+- [Throw](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/throw)
+
+You need to install Expo Location before running and testing the app itself.
+
+```
+expo install expo-location
+```
 
 ---
 ### Mock Results
