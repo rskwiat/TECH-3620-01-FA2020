@@ -27,19 +27,29 @@ Please respond with either an email or shared google doc, please copy the questi
 ---
 ### Week 2 - Soundboard App (1 of 2) <a name="Week2"></a>
 
-- What other features can we add to the soundboard application? Take a look through Expo's documenation 
+- What other features can we add to the soundboard application? Take a look through Expo's documenation.
+
 ### Week 3 - Soundboard App (2 of 2) <a name="Week3"></a>
 ---
 ### Week 4 - Weather App (1 of 3) <a name="Week4"></a>
+
+- What other data can we get from the Open Weather API to improve the information returned to the user?
+
 ### Week 5 - Weather App (2 of 3) <a name="Week5"></a>
 ### Week 6 - Weather App (3 of 3) <a name="Week6"></a>
+
+- How can we improve the speed of development time in our next application or in general so there's little jumping back and forth between directories?
+
 ---
 ### Week 7 - User Auth App (1 of 4) <a name="Week7"></a>
+
+- What are the alternatives to React Native Elements?
+
 ### Week 8 - User Auth App (2 of 4) <a name="Week8"></a>
 
 - With React Native Elements there are a few repeating variables / objects. Is it possible to refactor these into resuable functions?
 
-### Week 9 - User Auth App (3 of 4) <a name="Week0"></a>
+### Week 9 - User Auth App (3 of 4) <a name="Week9"></a>
 ### Week 10 - User Auth App (4 of 4) <a name="Week10"></a>
 ---
 ### Week 11 - News Reader App (1 of 5) <a name="Week11"></a>
