@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { 
-  Header
+  Header,
+  Text,
+  Input,
+  Button
 } from 'react-native-elements';
 
 import { SignInArea, Container } from '../components';
 import { theme } from '../theme';
 
 const SignInScreen = ({ navigation }) => {
+  const [userName, setUserName] = useState('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+  
+  const SignIn = () => {
+    setLoading(true);
+    console.log(userName, password);
+  }
 
   const SignUp = () => {
     navigation.navigate('SignUp');
@@ -26,6 +37,27 @@ const SignInScreen = ({ navigation }) => {
         containerStyle={{ height: 100 }}
       />
       <Container>
+        <Text h2 h2Style={{ marginBottom: 20 }}>User Auth</Text>
+        <Input
+          label="Please enter your email address"
+          placeholder="example@abc.com"
+          leftIcon={{ type: 'material', name: 'email', color: '#888' }}
+          onChangeText={value => setUserName(value)}
+        />
+        <Input
+          label="Please enter your password"
+          placeholder="password"
+          secureTextEntry
+          leftIcon={{ type: 'material', name: 'lock', color: '#888' }}
+          onChangeText={value => setPassword(value)}
+        />
+        <Button 
+          title="Sign In"
+          type="outline"
+          containerStyle={{ marginBottom: 40 }}
+          onPress={SignIn}
+          loading={loading}
+        />
         <SignInArea
           text="Don't have an account?"
           linkText="Please Sign up"
