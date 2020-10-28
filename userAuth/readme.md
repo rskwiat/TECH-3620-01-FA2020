@@ -26,9 +26,20 @@ React Native Elements is a UI Library designed for easy usage.
 expo install react-native-elements
 ```
 
+## Installation of Firebase - Database as a service
+
+We will be using Firebase a Free / Pay as you go service from Google to authenticate our users - you can build your own Auth service using a variety of Databases from mysql, postgres, mongodb , maria, etc. React and React Native do not care.
+
+```
+expo install firebase
+```
+
 ## Resources
 - [React Navigation](https://reactnavigation.org/)
 - [React Native Elements](https://reactnativeelements.com/)
+- [Firebase](https://firebase.google.com/)
+- [Firebase and Expo](https://docs.expo.io/guides/using-firebase/)
+- [React API Alert](https://reactnative.dev/docs/alert)
 
 ---
 

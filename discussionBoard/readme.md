@@ -50,6 +50,9 @@ Please respond with either an email or shared google doc, please copy the questi
 - With React Native Elements there are a few repeating variables / objects. Is it possible to refactor these into resuable functions?
 
 ### Week 9 - User Auth App (3 of 4) <a name="Week9"></a>
+
+- Even with using React Native Elements, there's a lot of repeating code. How can we go about making better optimized? Custom components, Mapping over an array etc?
+
 ### Week 10 - User Auth App (4 of 4) <a name="Week10"></a>
 ---
 ### Week 11 - News Reader App (1 of 5) <a name="Week11"></a>

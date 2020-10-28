@@ -7,6 +7,8 @@ import {
   Button
 } from 'react-native-elements';
 
+import setIcon from '../utils/setIcon';
+
 import { SignInArea, Container } from '../components';
 import { theme } from '../theme';
 
@@ -41,14 +43,24 @@ const SignInScreen = ({ navigation }) => {
         <Input
           label="Please enter your email address"
           placeholder="example@abc.com"
-          leftIcon={{ type: 'material', name: 'email', color: '#888' }}
+          leftIcon={{
+            type: 'material',
+            name: 'email',
+            color: '#888'
+          }}
           onChangeText={value => setUserName(value)}
+          containerStyle={{ paddingHorizontal: 0 }}
         />
         <Input
           label="Please enter your password"
           placeholder="password"
           secureTextEntry
-          leftIcon={{ type: 'material', name: 'lock', color: '#888' }}
+          leftIcon={{
+            type: 'material',
+            name: 'lock',
+            color: '#888'
+          }}
+          containerStyle={{ paddingHorizontal: 0 }}
           onChangeText={value => setPassword(value)}
         />
         <Button 
