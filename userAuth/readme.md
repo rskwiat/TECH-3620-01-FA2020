@@ -53,3 +53,34 @@ Common style of navigation in mobile apps is tab-based navigation. This can be t
 
 ### #Drawer:
 Common pattern in navigation is to use drawer from left (sometimes right) side for navigating between screens. Mostly used for seldom used features. --ie Linkedin Profile, Settings / Groups, Discovery section
+
+
+---
+
+## Errors with Node version 14
+
+If you are using node version 14 with Firebase you may run into an issue with the installation which is an issue with the `grpc` package -- nothing you can do to fix this. Check which version of node you are running by typing this into the command line. [Issue log found on github](https://github.com/grpc/grpc-node/issues/1183)
+
+```
+node -v
+```
+
+### Windows with Chocolately
+
+If you installed Node via Chocolately on windows run the following commands as `admin`, first we need to remove version 14 by running:
+
+```
+choco uninstall nodejs.install
+```
+
+After that's completed install the LTS (Long Term Service) version of Node (version 12).
+
+```
+choco install nodejs-lts
+```
+
+If you installed Node 14 with the downloaded files from the nodejs.org website, download the version 12 installer and run that.
+
+[Previous Node Releases](https://nodejs.org/en/download/releases/)
+
+
