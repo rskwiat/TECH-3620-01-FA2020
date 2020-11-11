@@ -30,9 +30,20 @@ expo install react-native-elements
 
 We will be using Firebase a Free / Pay as you go service from Google to authenticate our users - you can build your own Auth service using a variety of Databases from mysql, postgres, mongodb , maria, etc. React and React Native do not care.
 
+*November 10th Update* You also need the `base-64` package to authenticate with firebase.
+
 ```
-expo install firebase
+expo install firebase base-64
 ```
+
+*November 10th In-class Auth issue*
+
+The issue we had in class was that we were already authenticated with firebase and saved to the firebase object. Even though I had deleted the test user from the database, that user was still saved on my device.
+
+Another issue was that I kept writing `id` instead of `uid`. This updated code does work.
+
+---
+
 
 ## Resources
 - [React Navigation](https://reactnavigation.org/)
