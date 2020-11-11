@@ -36,6 +36,7 @@ Please respond with either an email or shared google doc, please copy the questi
 - What other data can we get from the Open Weather API to improve the information returned to the user?
 
 ### Week 5 - Weather App (2 of 3) <a name="Week5"></a>
+
 ### Week 6 - Weather App (3 of 3) <a name="Week6"></a>
 
 - How can we improve the speed of development time in our next application or in general so there's little jumping back and forth between directories?
@@ -53,10 +54,16 @@ Please respond with either an email or shared google doc, please copy the questi
 
 - Even with using React Native Elements, there's a lot of repeating code. How can we go about making better optimized? Custom components, Mapping over an array etc?
 
-### Week 10 - User Auth App (4 of 4) <a name="Week10"></a>
+### Week 10 - No Class Election Day
+
+- No Class Election Day
+
 ---
-### Week 11 - News Reader App (1 of 5) <a name="Week11"></a>
-### Week 12 - News Reader App (2 of 5) <a name="Week12"></a>
-### Week 13 - News Reader App (3 of 5) <a name="Week13"></a>
-### Week 14 - News Reader App (4 of 5) <a name="Week14"></a>
-### Week 15 - News Reader App (5 of 5) <a name="Week15"></a>
+### Week 11 - User Auth App (4 of 4) <a name="Week10"></a>
+
+- What other services can we use other than firebase to create user authentication?
+
+### Week 12 - News Reader App (1 of 4) <a name="Week12"></a>
+### Week 13 - News Reader App (2 of 4) <a name="Week13"></a>
+### Week 14 - News Reader App (3 of 4) <a name="Week14"></a>
+### Week 15 - News Reader App (4 of 4) <a name="Week15"></a>
