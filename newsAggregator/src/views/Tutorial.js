@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
 import {
   SafeAreaView,
@@ -6,23 +6,13 @@ import {
   Button
 } from 'react-native';
 
-import { Provider, Context } from '../context/NewsContext';
-
-
-const Tutorial = () => {
-  const { viewTutorial, state } = useContext(Context);
-
-  return (
-    <SafeAreaView>
+const Tutorial = ({ navigation }) => (
+  <SafeAreaView>
     <Text>Tutorial</Text>
-    <Button title="Viewed Tutorial" onPress={() => viewTutorial()} />
+    <Button title="Settings" onPress={() => navigation.navigate('Settings')} />
 
-
-    {/* <Button title="Settings" onPress={() => navigation.navigate('Settings')} />
-
-    <Button title="Main" onPress={() => navigation.navigate('Main')} />         */}
-    </SafeAreaView>
-  );
-}
+    <Button title="Main" onPress={() => navigation.navigate('Main')} />        
+  </SafeAreaView>
+);
 
 export default Tutorial;
