@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { MaterialIcons } from '@expo/vector-icons';
-
 import { ArticleList, Favorites, Settings, Tutorial } from './src/views';
 import { Provider, Context } from './src/context/NewsContext';
 import { navigationRef } from './src/rootNavigation';
@@ -44,9 +44,15 @@ const MainApplication = () => (
 );
 
 const App = () => {
+  const { checkToken } = useContext(Context);
+  
+  useEffect(() => {
+    checkToken();
+  }, []);
+  
   return (
     <NavigationContainer ref={navigationRef}>
-      <Stack.Navigator>
+      <Stack.Navigator headerMode="none">
         <Stack.Screen
           name="Tutorial"
           component={Tutorial}

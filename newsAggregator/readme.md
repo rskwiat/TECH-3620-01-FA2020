@@ -46,3 +46,4 @@ expo install @react-native-async-storage/async-storage expo-web-browser
 
 ## API Resource
 - [News API](https://newsapi.org/)
+- [Storing Data](https://stackoverflow.com/questions/44376002/what-are-my-options-for-storing-data-when-using-react-native-ios-and-android)

@@ -68,5 +68,8 @@ Please respond with either an email or shared google doc, please copy the questi
 - In terms of global / shared State Management, React Context provides very basic, but very useful global / shared state out of the box. What other tools / libaries are avaiable out there?
 
 ### Week 13 - News Reader App (2 of 4) <a name="Week13"></a>
+
+- How else could you save the information if a user has 'viewed' the tutorial or has opened the application in the past?
+
 ### Week 14 - News Reader App (3 of 4) <a name="Week14"></a>
 ### Week 15 - News Reader App (4 of 4) <a name="Week15"></a>

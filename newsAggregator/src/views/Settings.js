@@ -9,6 +9,7 @@ import {
 const Settings = () => (
   <SafeAreaView>
     <Text>Settings</Text>
+    <Text>More text</Text>
   </SafeAreaView>
 );
 
