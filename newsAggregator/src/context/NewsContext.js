@@ -8,6 +8,7 @@ const initialState = {
   viewTutorial: false,
   token: null,
   articles: null,
+  favorites: null,
 };
 
 const newsReducer = (state = initialState, action) => {
@@ -17,12 +18,39 @@ const newsReducer = (state = initialState, action) => {
         ...state,
         articles: action.payload
       }
+    case 'add_to_favorites':
+      if (state.favorites) {
+        if (state.favorites.includes(action.payload)) {
+          return {
+            ...state
+          }
+        }
+        return {
+          ...state,
+          favorites: [
+            ...state.favorites, 
+            action.payload
+          ]
+        }
+      } else {
+        return {
+          ...state,
+          favorites: [action.payload]
+        }
+      }
+    case 'delete_favorite':
+      return {
+        ...state,
+        favorites: state.favorites.filter(favorite => favorite !== action.payload)
+      }
     case 'check_token':
     case 'viewed_tutorial':
       return {
         viewTutorial: true,
         token: action.payload
       }
+    case 'reset_application':
+      return initialState
     default:
       return state;
   }
@@ -65,6 +93,28 @@ const fetchArticles = (dispatch) => async () => {
   }
 }
 
+const addToFavorites = (dispatch) => (value) => {
+  dispatch({
+    'type': 'add_to_favorites',
+    payload: value,
+  });
+}
+
+const deleteArticle = (dispatch) => (value) => {
+  dispatch({
+    'type': 'delete_favorite',
+    payload: value
+  });
+}
+
+const resetApplication = (dispatch) => async () => {
+  await AsyncStorage.removeItem('viewed_tutorial');
+  dispatch({
+    'type': 'reset_application'
+  });
+  navigate('Tutorial')
+}
+
 
 export const { Provider, Context } = createContext(
   newsReducer, 
@@ -72,6 +122,9 @@ export const { Provider, Context } = createContext(
     checkToken,
     viewTutorial,
     fetchArticles,
+    addToFavorites,
+    deleteArticle,
+    resetApplication,
   },
   initialState
 );
