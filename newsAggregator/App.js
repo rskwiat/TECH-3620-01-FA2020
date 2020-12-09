@@ -8,6 +8,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { ArticleList, Favorites, Settings, Tutorial } from './src/views';
 import { Provider, Context } from './src/context/NewsContext';
 import { navigationRef } from './src/rootNavigation';
+import { SearchDrawer } from './src/components';
 
 import { theme } from './src/theme';
 
@@ -26,6 +27,12 @@ const tabIcon = (routeName, focusedColor) => {
   );
 }
 
+const Articles = ({ navigation }) => (
+  <Drawer.Navigator drawerContent={(props) => <SearchDrawer {...props} />}>
+    <Drawer.Screen name="Articles" component={ArticleList} {...navigation} />
+  </Drawer.Navigator>
+);
+
 const MainApplication = () => (
   <Tab.Navigator
     tabBarOptions={{
@@ -38,7 +45,7 @@ const MainApplication = () => (
       }
     })}
   >
-    <Tab.Screen name="Articles" component={ArticleList} />
+    <Tab.Screen name="Articles" component={Articles} />
     <Tab.Screen name="Favorites" component={Favorites} />
   </Tab.Navigator>
 );

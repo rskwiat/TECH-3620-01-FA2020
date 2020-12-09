@@ -20,6 +20,14 @@ const ArticleList = ({ navigation }) => {
     <React.Fragment>
       <Header 
         backgroundColor={theme.blue}
+        leftComponent={
+          <MaterialIcons
+            name="menu"
+            size={24}
+            color={theme.white}
+            onPress={() => navigation.toggleDrawer()}
+          />
+        }
         centerComponent={{
           text: 'Top Trending Stories',
           style: { color: theme.white }

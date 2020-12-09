@@ -72,4 +72,9 @@ Please respond with either an email or shared google doc, please copy the questi
 - How else could you save the information if a user has 'viewed' the tutorial or has opened the application in the past?
 
 ### Week 14 - News Reader App (3 of 4) <a name="Week14"></a>
+
 ### Week 15 - News Reader App (4 of 4) <a name="Week15"></a>
+
+- In the Applicationw when a user saves an news article as their favorite, how would we go about showing some feedback about what happened and how those articles are now in their favorites.
+
+- How would we go about saving our favorite articles to be persistent? No need to refactor anything but super broad strokes of data saving.

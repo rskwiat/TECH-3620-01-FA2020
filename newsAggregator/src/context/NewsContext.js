@@ -8,7 +8,7 @@ const initialState = {
   viewTutorial: false,
   token: null,
   articles: null,
-  favorites: null,
+  favorites: [],
 };
 
 const newsReducer = (state = initialState, action) => {
@@ -60,7 +60,7 @@ const checkToken = (dispatch) => async () => {
   const token = await AsyncStorage.getItem('viewed_tutorial');
   if (token) {
     dispatch({
-      'type': 'check_token',
+      type: 'check_token',
       payload: token,
     });
     navigate('Main');
@@ -71,7 +71,7 @@ const viewTutorial = (dispatch) => {
   return async (value) => {
       const token = await AsyncStorage.setItem('viewed_tutorial', value);
       dispatch({
-        'type': 'viewed_tutorial',
+        type: 'viewed_tutorial',
         payload: token,
       });
       navigate('Main');
@@ -84,7 +84,7 @@ const fetchArticles = (dispatch) => async () => {
     const data = await response.json();
     
     dispatch({
-      'type': 'fetch_articles',
+      type: 'fetch_articles',
       payload: data.articles
     });
 
@@ -93,16 +93,31 @@ const fetchArticles = (dispatch) => async () => {
   }
 }
 
+const changeTopic = (dispatch) => async (search) => {
+  try {
+    const response = await fetch(`http://newsapi.org/v2/everything?q=${search}&apiKey=${api.key}`)
+    const data = await response.json();
+        
+    dispatch({
+      type: 'fetch_articles',
+      payload: data.articles
+    });
+
+  } catch(e) {
+    throw new Error(e.message)
+  }
+}
+
 const addToFavorites = (dispatch) => (value) => {
   dispatch({
-    'type': 'add_to_favorites',
+    type: 'add_to_favorites',
     payload: value,
   });
 }
 
 const deleteArticle = (dispatch) => (value) => {
   dispatch({
-    'type': 'delete_favorite',
+    type: 'delete_favorite',
     payload: value
   });
 }
@@ -110,7 +125,7 @@ const deleteArticle = (dispatch) => (value) => {
 const resetApplication = (dispatch) => async () => {
   await AsyncStorage.removeItem('viewed_tutorial');
   dispatch({
-    'type': 'reset_application'
+    type: 'reset_application'
   });
   navigate('Tutorial')
 }
@@ -122,6 +137,7 @@ export const { Provider, Context } = createContext(
     checkToken,
     viewTutorial,
     fetchArticles,
+    changeTopic,
     addToFavorites,
     deleteArticle,
     resetApplication,

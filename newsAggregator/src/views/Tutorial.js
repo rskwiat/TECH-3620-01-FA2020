@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 
 import {
   View,
   SafeAreaView,
-  PixelRatio,
-  Image,
+  ScrollView,
   StyleSheet,
+  Dimensions,
 } from 'react-native';
 
 import {
@@ -14,44 +14,79 @@ import {
 } from 'react-native-elements';
 
 import { Context } from '../context/NewsContext';
+import TutorialPage from './subScreens/TutorialPage';
 
 const Tutorial = () => {
+  const [sliderState, setSliderState] = useState({ currentPage: 0 });
   const { viewTutorial } = useContext(Context);
+  const { width } = Dimensions.get('window');
+
+  const setSliderPage = (event) => {
+    const { currentPage } = sliderState;
+    const { x } = event.nativeEvent.contentOffset;
+    const indexOfNextScreen = Math.floor(x / width);
+
+    if (indexOfNextScreen !== currentPage) {
+      setSliderState({
+        ...sliderState,
+        currentPage: indexOfNextScreen
+      });
+    }
+  };
+
+  const { currentPage: pageIndex } = sliderState;
 
   return (
     <SafeAreaView>
-      <View style={styles.container}>
-        <Image 
-          style={styles.imageStyle} 
-          source={require('../../assets/intro-first.jpg')}
-        />
-        <Text h3>News Aggregation Service</Text>
-        <Text style={styles.intro}>Get breaking news headlines, and search for articles from news sources and blogs all over the web.</Text>
-        <Button 
-          title="Get Started"
-          onPress={() => viewTutorial('visited')}
-        />
+      <ScrollView
+        horizontal={true}
+        scrollEventThrottle={16}
+        pagingEnabled={true}
+        showsHorizontalScrollIndicator={false}
+        onScroll={(event) => {
+          setSliderPage(event);
+        }}
+      >
+        <TutorialPage headerText="News Aggregation Service" />
+        <TutorialPage headerText="News Service Page 2">
+          <Button 
+            title="Get Started"
+            onPress={() => viewTutorial('visited')}
+          />
+        </TutorialPage>
+      </ScrollView>
+      
+      <View style={styles.pagination}>
+        {Array.from(Array(2).keys()).map((key, index) => (
+          <View style={[
+            styles.paginationDots,
+            { opacity: pageIndex === index ? 1 : 0.2 }
+          ]}
+            key={index}
+          />
+        ))}
       </View>
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
-  imageStyle: {
-    height: PixelRatio.getPixelSizeForLayoutSize(200),
-    width: '100%',
-    marginBottom: 40,
-    backgroundColor: '#000',
+  pagination: {
+    position: 'absolute',
+    bottom: 100,
+    left: 0,
+    right: 0,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
   },
-  container: {
-    marginHorizontal: 18,
-  },
-  intro: {
-    fontSize: 16,
-    lineHeight: 24,
-    marginTop: 10,
-    marginBottom: 20,
+  paginationDots: {
+    height: 10,
+    width: 10,
+    borderRadius: 10 / 2,
+    backgroundColor: 'red',
+    marginLeft: 10,
   }
-})
+});
 
 export default Tutorial;
