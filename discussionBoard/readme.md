@@ -75,6 +75,8 @@ Please respond with either an email or shared google doc, please copy the questi
 
 ### Week 15 - News Reader App (4 of 4) <a name="Week15"></a>
 
-- In the Applicationw when a user saves an news article as their favorite, how would we go about showing some feedback about what happened and how those articles are now in their favorites.
+As we finish up the application there are two big features missing:
 
-- How would we go about saving our favorite articles to be persistent? No need to refactor anything but super broad strokes of data saving.
+1. When a user clicks on the favorite button there is no feedback for what the button actually does. How would you go about solving this issue with some sort of feedback or notification? There are several libraries that allow you to have small pop (there is a pattern n built into Android already) ups that disappear after a few seconds or you could try to right your own. (If you do decide to right your own custom implementation pseudo code, just describing what your component would do is fine).
+
+2. When a user closes the application all of their favorites disappear - how can we go about saving these items so they are persistent. You are not limited to on device / library. Keep in mind certain features have a memory storage memory limit.
